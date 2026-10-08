@@ -16,7 +16,28 @@
         #errorLoginBtn:hover{background:#072952 !important}
         input,select,textarea{font-size:16px !important}
 
-      
+        /* ==========================================
+           ANIMACIÓN DE ENTRADA DE PÁGINA
+           ========================================== */
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            animation: pageEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        #loadingScreen {
+            animation: none;
+        }
+
         .header-icon img {
             width: 28px;
             height: 28px;
@@ -30,7 +51,6 @@
             object-fit: contain;
         }
 
-    
         #loadingScreen.onboarding-loading {
             position: fixed;
             inset: 0;
@@ -304,7 +324,9 @@
         _0xd4.addEventListener('input', _0xi9);
         _0xi9();
 
-    
+        /* ==========================================
+           ONBOARDING ROTATIVO — 4 estados
+           ========================================== */
         var _0xOB = [
             { icon: 'beach', subtitle: 'Más cómodo', description: 'Consulta tu saldo y movimientos sin moverte de casa.' },
             { icon: 'euro', subtitle: 'Más rápido', description: 'Paga, transfiere y recarga en poco pasos.' },
